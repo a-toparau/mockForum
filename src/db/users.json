@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "name": "user1",
+    "email": "user1@example.com",
+    "tg": "@user1",
+    "role": "USER"
+  },
+  {
+    "id": 2,
+    "name": "user2",
+    "email": "user2@example.com",
+    "tg": "@user2",
+    "role": "USER"
+  },
+  {
+    "id": 3,
+    "name": "user3",
+    "email": "user3@example.com",
+    "tg": "@user3",
+    "role": "USER"
+  },
+  {
+    "id": 4,
+    "name": "user4",
+    "email": "user4@example.com",
+    "tg": "@user4",
+    "role": "USER"
+  },
+  {
+    "id": 5,
+    "name": "user5",
+    "email": "user5@example.com",
+    "tg": "@user5",
+    "role": "USER"
+  },
+  {
+    "id": 6,
+    "name": "user6",
+    "email": "user6@example.com",
+    "tg": "@user6",
+    "role": "USER"
+  },
+  {
+    "id": 7,
+    "name": "user7",
+    "email": "user7@example.com",
+    "tg": "@user7",
+    "role": "USER"
+  },
+  {
+    "id": 8,
+    "name": "user8",
+    "email": "user8@example.com",
+    "tg": "@user8",
+    "role": "USER"
+  },
+  {
+    "id": 9,
+    "name": "user9",
+    "email": "user9@example.com",
+    "tg": "@user9",
+    "role": "USER"
+  },
+  {
+    "id": 10,
+    "name": "user10",
+    "email": "user10@example.com",
+    "tg": "@user10",
+    "role": "USER"
+  },
+  {
+    "id": 100,
+    "name": "admin",
+    "email": "admin@example.com",
+    "tg": "@admin",
+    "role": "ADMIN"
+  }
+]
