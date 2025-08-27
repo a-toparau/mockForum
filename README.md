@@ -1,6 +1,7 @@
 # MockForum
 
 Тестовое задание
+**Deploy:** [https://sweet-frangollo-4e4d22.netlify.app/](https://sweet-frangollo-4e4d22.netlify.app/)
 
 ## Реализовано
 
