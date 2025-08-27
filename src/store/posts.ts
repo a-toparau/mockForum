@@ -105,10 +105,6 @@ export const usePostsStore = create<IPostsState>()(
             `addComment(${comment.postId})`,
           );
         },
-
-        // selectPostComments: (postId) => {
-        //   return get().comments[postId];
-        // },
       }),
 
       { name: 'postStorage' },
