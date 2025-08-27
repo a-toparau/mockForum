@@ -7,16 +7,16 @@
 - **Фейковая авторизация**  
   Проверяется только `username`. Пользователь с `id = 1` получает роль **admin**.
 - **Список пользователей для теста (username из JSONPlaceholder):**
-Bret - admin
-Antonette
-Samantha
-Karianne
-Kamren
-Leopoldo_Corkery
-Elwyn.Skiles
-Maxime_Nienow
-Delphine
-Moriah.Stanton
+- Bret - admin
+  - Antonette
+  - Samantha
+  - Karianne
+  - Kamren
+  - Leopoldo_Corkery
+  - Elwyn.Skiles
+  - Maxime_Nienow
+  - Delphine
+  - Moriah.Stanton
 
 - **Работа с постами:**
 - загрузка постов;  
