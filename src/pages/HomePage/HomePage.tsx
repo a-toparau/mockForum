@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import { Stack, Typography, Button } from '@mui/material';
 import { usePostsStore } from '@/store/posts';
 import { PostCard } from '@/components/PostCard/PostCard';
+import { isEmpty } from 'lodash';
 
 export const HomePage = () => {
   const [showCreate, setShowCreate] = useState(false);
   const { posts, getAllPosts, loading } = usePostsStore();
 
   useEffect(() => {
-    !posts && getAllPosts();
+    isEmpty(posts) && getAllPosts();
   }, [getAllPosts]);
 
   // TODO: add pagination

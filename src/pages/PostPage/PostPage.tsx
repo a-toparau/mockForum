@@ -22,8 +22,6 @@ export default function PostPage() {
 
   const {
     register,
-    handleSubmit,
-    reset,
     formState: { errors },
   } = useForm<{ body: string }>({
     resolver: zodResolver(schema),
@@ -37,23 +35,23 @@ export default function PostPage() {
     })();
   }, [postId, getPostWithComments]);
 
-  const onSubmit = (data: { body: string }) => {
-    // addComment(postId, data.body)
-    // reset();
-    // setPostData((prev) => ({
-    //   ...prev,
-    //   postComments: [
-    //     ...prev.postComments,
-    //     {
-    //       postId,
-    //       id: Date.now(),
-    //       name: 'name',
-    //       email: 'mail',
-    //       body: data.body,
-    //     },
-    //   ],
-    // }));
-  };
+  // const onSubmit = (data: { body: string }) => {
+  // addComment(postId, data.body)
+  // reset();
+  // setPostData((prev) => ({
+  //   ...prev,
+  //   postComments: [
+  //     ...prev.postComments,
+  //     {
+  //       postId,
+  //       id: Date.now(),
+  //       name: 'name',
+  //       email: 'mail',
+  //       body: data.body,
+  //     },
+  //   ],
+  // }));
+  // };
 
   if (!postData.post) return <Typography>Post not found</Typography>;
 
@@ -82,7 +80,8 @@ export default function PostPage() {
         ))}
       </Stack>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      {/* <form onSubmit={handleSubmit(onSubmit)}> */}
+      <form>
         <Stack spacing={1}>
           <TextField
             label="Enter your comment"
