@@ -1,12 +1,17 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import './index.css';
-import { HomePage } from './pages/HomePage/HomePage';
-import { UserPage } from './pages/UserPage/UserPage';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router/router';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { theme } from './theme/theme';
+import { Notification } from './components/Notification/Notification';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <HomePage />
-    <UserPage />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <RouterProvider router={router} />
+      <Notification />
+    </ThemeProvider>
   </StrictMode>,
 );

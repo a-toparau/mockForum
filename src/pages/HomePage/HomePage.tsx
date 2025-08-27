@@ -1,18 +1,35 @@
-import { useAuthStore } from '@/store/auth';
-import { UserRolesEnum } from '@/types/user';
+import { useEffect, useState } from 'react';
+import { Stack, Typography, Button } from '@mui/material';
+import { usePostsStore } from '@/store/posts';
+import { PostCard } from '@/components/PostCard/PostCard';
 
 export const HomePage = () => {
-  const { user, login, logout } = useAuthStore();
+  const [showCreate, setShowCreate] = useState(false);
+  const { posts, getAllPosts, loading } = usePostsStore();
 
-  const onClick = () => {
-    login({ id: 1, email: 'email', name: 'test', role: UserRolesEnum.USER, tg: 'tg' });
-  };
+  useEffect(() => {
+    !posts && getAllPosts();
+  }, [getAllPosts]);
+
+  // TODO: add pagination
+  const displayedPosts = posts.slice(0, 20);
 
   return (
-    <>
-      <h2>Home Page: {user?.name}</h2>
-      <button onClick={onClick}>add test</button>
-      <button onClick={logout}>logout</button>
-    </>
+    <Stack spacing={3}>
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
+        <Typography variant="h5">Posts</Typography>
+        <Button variant="contained" onClick={() => setShowCreate((s) => !s)}>
+          {showCreate ? 'Hide' : 'New post'}
+        </Button>
+      </Stack>
+
+      <Stack spacing={2}>
+        {displayedPosts.map((p) => (
+          <PostCard post={p} key={p.id} />
+        ))}
+      </Stack>
+
+      {!loading && !posts.length && <Typography>Posts not found</Typography>}
+    </Stack>
   );
 };
