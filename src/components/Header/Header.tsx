@@ -8,7 +8,6 @@ import { useAuthStore } from '@/store/auth';
 export const Header = () => {
   const { user, logout } = useAuthStore();
   const { pathname } = useLocation();
-  console.log('pathname: ', pathname);
   const isLoginVisable = pathname !== APP_PATHS_ENUM.LOGIN && !user;
 
   return (

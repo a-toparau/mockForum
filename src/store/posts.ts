@@ -16,6 +16,8 @@ interface IPostsState {
   getPostWithComments: (id: number) => Promise<{ post?: IPost; postComments: IComment[] }>;
   react: (id: number, value: boolean) => void;
   toggleFavoritePost: (id: number) => void;
+  addComment: (comment: IComment) => void;
+  // selectPostComments: (postId: number) => IComment[];
 }
 
 export const usePostsStore = create<IPostsState>()(
@@ -87,6 +89,26 @@ export const usePostsStore = create<IPostsState>()(
 
           set({ favoritePosts: favs }, false, `toggleFavorite(${id})`);
         },
+
+        addComment: (comment) => {
+          set(
+            (state) => {
+              const { postId } = comment;
+              const comments = {
+                ...state.comments,
+                [postId]: [...state.comments[postId], comment],
+              };
+
+              return { comments };
+            },
+            false,
+            `addComment(${comment.postId})`,
+          );
+        },
+
+        // selectPostComments: (postId) => {
+        //   return get().comments[postId];
+        // },
       }),
 
       { name: 'postStorage' },
